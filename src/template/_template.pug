@@ -1,0 +1,32 @@
+
+include mixins/_svgicon-mixin.pug
+block variables
+include ../../node_modules/bemto.pug/bemto.pug
+doctype html
+html(lang="ru")
+  head
+    title #{title}
+    meta(charset="utf-8")
+    meta(content="" name="author")
+    meta(content="" name="description")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="HandheldFriendly" content="true")
+    meta(name="format-detection", content="telephone=no")
+    meta(content="IE=edge" http-equiv="X-UA-Compatible")
+    //- vendor blocks
+    //-link(rel='stylesheet' href='/assets/css/vendor.css')
+    script(src='./assets/js/vendor.js' defer)
+    //- vendor blocks end
+    //- main style
+    link(rel='stylesheet' href='./assets/css/style.css')
+    script(src='http://vk.com/js/api/openapi.js' type="text/javascript" defer)
+    //- application script
+    script(src='./assets/js/app.js' defer)
+
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    <![endif]-->
+
+  body.home-page
+    .wrapper
+      block content
