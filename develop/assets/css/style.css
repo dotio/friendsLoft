@@ -328,7 +328,7 @@ body {
     .friends-list__items .icon-plus:hover {
       fill: #4f4f4f; }
 
-.left-item {
+.left-item, .right-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

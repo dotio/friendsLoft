@@ -93,6 +93,8 @@
 }
 
 
+
+
 .friends-list{
   width: 100%;
   height: 100%;
@@ -136,7 +138,7 @@
   }
 }
 
-.left-item{
+.left-item, .right-item{
   display: flex;
   align-items: center;
   height: 100%;

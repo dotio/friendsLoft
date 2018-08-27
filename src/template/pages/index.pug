@@ -23,127 +23,38 @@ block content
                 +icon('search')
             +e.right
                 input(type='text' placeholder='Название').right-input
+
         // list friends
         +b.friends
             //left zone
             +e.left
                 +e.title Ваши друзья
-                ul.friends-list
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-                    li.friends-list__items
-                        .left-item
-                            img(src='./assets/img/q.jpeg').friend-foto
-                            .friendName Rus
-                        .right-item
-                            +icon('plus')
-
-
-
-
-
+                ul.friends-list#friendsListLeft
             //right zone
             +e.right
                 +e.title Друзья в списке
-                    ul.friends-list
-                        li.friends-list__items
-                            .left-item
-                                img(src='./assets/img/q.jpeg').friend-foto
-                                .friendName Rus
-                            .right-item
-                                +icon('close')
+                ul.friends-list#friendsListRight
         +b.footer
             +e.BUTTON().button Сохранить
 
+    //- script(id="template-friends__left" type="text/x-handlebars-template")
+    //-     | {{#each items}}
+    //-     li.friends-list__items(draggable="true" data-id="{{id}}")
+    //-         .left-item
+    //-             img.friend-foto(draggable="false" src="{{photo_100}}")
+    //-             .friendName
+    //-             | {{first_name}} {{last_name}}
+    //-         .right-item
+    //-             +icon('plus')
+    //-     | {{/each}}
 
-
+    //- script(id="template-friends__right" type="text/x-handlebars-template")
+    //-   | {{#each items}}
+    //-   li.friends-list__items(draggable="true" data-id="{{id}}")
+    //-       .left-item
+    //-           img.friend-foto(draggable="false" src="{{photo_100}}")
+    //-           .friendName
+    //-           | {{first_name}} {{last_name}}
+    //-       .right-item
+    //-           +icon('close')
+    //-   | {{/each}}
