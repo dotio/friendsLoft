@@ -89,13 +89,10 @@ if (localStorage.data) {
             return callAPI('friends.get', { fields: 'photo_100' });
         })
         .then(res => {
-            // тут мы получаем массив с друзьями из предыдущего then и он передается в функцию create первым аргументом res
-            // res.items - это массив с объектами, который мы получаем из api vk
-            // с помощью map добавляем каждому элементу selected
             friends = res.items.map(item => {
                 return Object.assign(item, { selected: false })
             });
-            // friends - json из vk
+            // friends - json from vk
             createFriends(friends);
         });
 }
@@ -111,7 +108,6 @@ function createFriends(friends) {
     friendsListLeft.innerHTML = '';
     friendsListRight.innerHTML = '';
     
-    // в item хранится объект с инфой о каждом друге
     friends.forEach(item => {
 
         const fullName = `${item.first_name} ${item.last_name}`;
@@ -132,7 +128,7 @@ function createFriends(friends) {
 // **********************************************************************
 // Local Storage
 // **********************************************************************
-// в глобальном объекте localStorage можно сохранить только строку, поэтому с помощью json нужно перевести объект с инфо
+
 saveBtn.addEventListener('click', function() {
     localStorage.data = JSON.stringify(friends);
 })
@@ -148,31 +144,33 @@ rigthInput.addEventListener('input', () => {
 
         const fullName = `${item.first_name} ${item.last_name}`;
 
-            if (item.selected == false) {
+        if (item.selected == false) {
 
-                    return item;
-            }
+            return item;
+        }
 
         return fullName.toLowerCase().includes(value);
         
     });
-    // filtered - получается массив с объектами отфильтрованных друзей
+
     createFriends(filtered);
 })
-
 
 leftInput.addEventListener('input', () => {
     const { value } = leftInput;
 
     const filtered = friends.filter(item => {
+
         const fullName = `${item.first_name} ${item.last_name}`;
 
         if (item.selected == true) {
+
             return item
         }
 
         return fullName.toLowerCase().includes(value);
     })
+
     createFriends(filtered);
 })
 
@@ -220,7 +218,6 @@ document.addEventListener('drop', (e) => {
 // **********************************************************************
 // ADD/REMOVE
 // **********************************************************************
-
 document.addEventListener('click', function(e) {
     if (e.target.closest('.icon-plus')) {
 
